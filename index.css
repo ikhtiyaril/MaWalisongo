@@ -1,6 +1,11 @@
+* {
+    box-sizing: border-box; /* Memastikan padding dan border dihitung dalam lebar elemen */
+}
+
 body {
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
 .header {
@@ -137,20 +142,36 @@ body {
 /* Media Queries for Mobile Responsiveness */
 @media (max-width: 768px) {
     /* Header layout adjustments */
+    .right-group {
+        gap: 20px; /* Reducing the gap between items */
+    }
+
+    /* Ensuring the program container and dropdown menu are still aligned */
+    .programb-container {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Adjustments to h1 inside .programa for smaller screens */
+    .programa h1 {
+        font-size: 14px;
+    }
+    
+    /* Ensure that the header content (logo, left-group, right-group) are still aligned */
     .header {
         flex-direction: column;
-        align-items: flex-start;
-        padding: 10px;
+        justify-content: flex-start;
     }
 
-    .right-group {
-        flex-direction: column;
-        gap: 20px;
-        position: static;
+    /* Add padding for header items */
+    .logo {
+        margin-bottom: 10px;
     }
 
-    .programa h1 {
-        font-size: 1rem;
+    .left-group {
+        margin-bottom: 10px;
     }
 
     /* Content section adjustments */
