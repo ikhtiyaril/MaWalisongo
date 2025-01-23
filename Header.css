@@ -1,18 +1,22 @@
 body {
     margin: 0;
     padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
+
+/* Header Styles */
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: rgb(3, 18, 96);
     padding: 10px 20px;
-    box-shadow: -9px 15px 23px -9px rgba(0,0,0,0.94);
+    box-shadow: -9px 15px 23px -9px rgba(0, 0, 0, 0.94);
     position: sticky;
-    top: 0px;
+    top: 0;
     z-index: 10;
 }
+
 .ft {
     font-size: small;
     color: azure;
@@ -22,30 +26,38 @@ body {
     border-radius: 5px;
     transition: transform 0.3s ease, background-color 0.3s ease;
 }
+
 .logo {
     height: 4rem;
 }
+
 .left-group {
     display: flex;
     align-items: center;
 }
+
 .left-group .c {
     margin-left: 10px;
     font-size: large;
     color: white;
 }
+
 .right-group {
     display: flex;
     gap: 90px;
     position: relative;
 }
+
+/* Menu dropdown */
 .programa {
     position: relative;
 }
+
 .programa h1 {
     cursor: pointer;
     transition: transform 0.3s ease;
 }
+
 .programb-container {
     display: none;
     position: absolute;
@@ -56,26 +68,33 @@ body {
     left: 0;
     z-index: 10;
 }
+
 .programb-container p {
     color: white;
     padding: 8px;
     margin: 0;
     font-size: small;
 }
+
 .left-group:hover .ft {
     background-color: #608BC1;
     transform: translateY(-10px);
 }
+
 .right-group div:hover h1 {
     transform: translateY(-10px);
     background-color: #608BC1;
 }
+
 .programa:hover .programb-container {
     display: block;
 }
+
 .programb-container p:hover {
     background-color: #608BC1;
 }
+
+/* Content Styling */
 .content {
     background-image: url(bgc2.jpg);
     background-position: center;
@@ -85,8 +104,9 @@ body {
     align-items: center;
     width: 100%;
     height: 450px;
-    box-shadow: -9px 15px 23px -9px rgba(0,0,0,0.94);
+    box-shadow: -9px 15px 23px -9px rgba(0, 0, 0, 0.94);
 }
+
 .ct1 {
     max-width: 50%;
     max-height: 90%;
@@ -94,16 +114,14 @@ body {
     margin: 0 auto;
     padding: 10px;
     object-fit: contain;
-    box-shadow: -9px 15px 23px -9px rgba(0,0,0,0.94);
+    box-shadow: -9px 15px 23px -9px rgba(0, 0, 0, 0.94);
 }
+
 .clog {
     background-color: transparent;
 }
 
-.ft2 {
-    color: aliceblue;
-    font-size: large;
-}
+/* Footer Styles */
 footer {
     background-color: #f1f1f1;
     padding: 20px;
@@ -114,6 +132,7 @@ footer {
     display: flex;
     justify-content: center;
     gap: 40px;
+    flex-wrap: wrap; /* Ensures responsiveness */
 }
 
 h3 {
@@ -162,4 +181,57 @@ ul {
 .footer-credit a {
     text-decoration: none;
     color: red;
+}
+
+/* Media Query for smaller screens (Mobile / Tablets) */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column; /* Stack header items vertically */
+        align-items: flex-start;
+        padding: 10px 15px;
+    }
+
+    .right-group {
+        gap: 20px; /* Reduce the space between items */
+    }
+
+    .ft {
+        font-size: 14px; /* Reduce the size of footer text */
+    }
+
+    .content {
+        height: 300px; /* Adjust content height for smaller screens */
+    }
+
+    .ct1 {
+        max-width: 90%; /* Make the image width responsive */
+    }
+
+    .footer-container {
+        flex-direction: column; /* Stack footer content vertically */
+        gap: 20px;
+    }
+
+    .footer-button {
+        width: 80%; /* Make buttons fit smaller screens */
+    }
+
+    .social-icons a {
+        font-size: 1.2em; /* Adjust icon size */
+    }
+}
+
+/* Further Media Query for very small devices */
+@media (max-width: 480px) {
+    .header {
+        padding: 5px 10px;
+    }
+
+    .right-group {
+        display: none; /* Hide right group on very small screens */
+    }
+
+    .programa h1 {
+        font-size: 14px; /* Reduce font size for headings */
+    }
 }
